@@ -126,6 +126,15 @@ class HTMLElementBase
     }
 
     /**
+     * Возвращает кодировку по умолчанию.
+     * @return string
+     */
+    public function getDefaultCharset()
+    {
+        return $this->default_charset;
+    }
+
+    /**
      * Устанавливает значение для заголовка.
      * @param $value string - значение заголовка
      * @return bool
