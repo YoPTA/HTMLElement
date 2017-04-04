@@ -79,15 +79,14 @@ class HTMLElementBase
      */
     private $disabled = false;
 
-    // Конфигурация элемента
-    private $element_config = [
-        'name' => false,
-        'id' => false,
-        'value' => false,
-        'title' => false,
-        'style' => false,
-        'placeholder' => false,
-    ];
+    /**
+     * Текущее поле хранит в себе конфигурацию
+     * HTML элемента (набор атрибутов) с их значением
+     * в паре ключ=>значение.
+     * Пример: name='someName', value='someValue' и т.п.
+     * @var array
+     */
+    private $element_config = [];
 
     /*******************************************************
      ******************** Методы класса ********************
