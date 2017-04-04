@@ -12,7 +12,7 @@ include_once dirname(__FILE__).'/HTMLTextStringElement.php';
 
 
 
-$base_object = new HTMLTextStringElement(HTMLTextStringElement::HTML_E_TYPE_STRING);
+$base_object = new HTMLTextStringElement(HTMLTextStringElement::HTML_E_TYPE_TEXT_STRING);
 
 $base_object->setValue('123');
 echo $base_object->getValue();

@@ -27,14 +27,14 @@ class HTMLElementBase
      *******************************************************/
 
     // Возможные типы
-    const HTML_E_TYPE_STRING = 'string'; // Строка
-    const HTML_E_TYPE_INTEGER = 'integer'; // Целое число
-    const HTML_E_TYPE_TEXTAREA = 'textarea'; // Текстовая область
-    const HTML_E_TYPE_DATE = 'date'; // Дата
-    const HTML_E_TYPE_TIME = 'time'; // Время
+    const HTML_E_TYPE_TEXT_STRING = 'string'; // Строка
+    const HTML_E_TYPE_TEXT_INTEGER = 'integer'; // Целое число
+    const HTML_E_TYPE_TEXT_TEXTAREA = 'textarea'; // Текстовая область
+    const HTML_E_TYPE_TEXT_DATE = 'date'; // Дата
+    const HTML_E_TYPE_TEXT_TIME = 'time'; // Время
 
-    const HTML_E_TYPE_CHECKBOX = 'checkbox'; // Флажки
-    const HTML_E_TYPE_RADIO = 'radio'; // Переключатель
+    const HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX = 'checkbox'; // Флажки
+    const HTML_E_TYPE_CHECKBOXANDRADIO_RADIO = 'radio'; // Переключатель
     const HTML_E_TYPE_SELECT = 'select'; // Список
 
 
@@ -46,8 +46,8 @@ class HTMLElementBase
     * включить в массив с типами.
     */
     public $types_type = [
-        self::HTML_E_TYPE_STRING => true,   // Включен тип EO_TYPE_STRING
-        self::HTML_E_TYPE_INTEGER => true,      // Включен тип EO_TYPE_INT
+        self::HTML_E_TYPE_TEXT_STRING => true,   // Включен тип EO_TYPE_STRING
+        self::HTML_E_TYPE_TEXT_INTEGER => true,      // Включен тип EO_TYPE_INT
     ];
 
     // Установки конфигурации элемента
