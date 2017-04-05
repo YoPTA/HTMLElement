@@ -36,7 +36,7 @@ class HTMLTextTextareaElement extends HTMLTextElement
     {
         $el_attributes = '';
 
-        if (parent::getType() == self::HTML_E_TYPE_TEXT_STRING)
+        if (parent::getType() == self::HTML_E_TYPE_TEXT_TEXTAREA)
         {
             parent::setStyle('width: 250px;');
             if (parent::getCheck() === false)
