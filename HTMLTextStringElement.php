@@ -71,7 +71,7 @@ class HTMLTextStringElement extends HTMLTextElement
         }
         else
         {
-            return '<span>No element</span>';
+            return parent::getNoElement();
         }
     }
 }

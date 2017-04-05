@@ -46,8 +46,10 @@ class HTMLElementBase
     * включить в массив с типами.
     */
     public $types_type = [
-        self::HTML_E_TYPE_TEXT_STRING => true,   // Включен тип EO_TYPE_STRING
-        self::HTML_E_TYPE_TEXT_INTEGER => true,      // Включен тип EO_TYPE_INT
+        self::HTML_E_TYPE_TEXT_STRING => true,
+        self::HTML_E_TYPE_TEXT_INTEGER => true,
+        self::HTML_E_TYPE_TEXT_TEXTAREA => true,
+        self::HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX => true,
     ];
 
     // Установки конфигурации элемента
@@ -321,5 +323,14 @@ class HTMLElementBase
     public function getCheck()
     {
         return $this->check;
+    }
+
+    /**
+     * Возвращает шаблон, если нет элемента.
+     * @return string
+     */
+    public function getNoElement()
+    {
+        return '<span>No element</span>';
     }
 }

@@ -70,7 +70,7 @@ class HTMLTextTextareaElement extends HTMLTextElement
         }
         else
         {
-            return '<span>No element</span>';
+            return parent::getNoElement();
         }
     }
 }
