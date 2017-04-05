@@ -3,7 +3,7 @@
 namespace HTMLElement;
 
 
-class HTMLTextStringElement extends HTMLTextElement
+class HTMLTextTextareaElement extends HTMLTextElement
 {
     /**
      * Проводит необходимую проверку для текущего типа.
@@ -53,21 +53,21 @@ class HTMLTextStringElement extends HTMLTextElement
                 {
                     if ($el_attributes != '') $el_attributes .= ' ';
 
-                    $el_attributes .= $key .'="'.$val.'"';
+                    if ($key != self::HTML_E_CONFIG_VALUE_NAME) $el_attributes .= $key .'="'.$val.'"';
                 }
             }
 
             return ((parent::getCaption() != '')
                 ? '<label'.
-                    ((parent::getId() != '' && parent::getId() != false)
+                ((parent::getId() != '' && parent::getId() != false)
                     ? ' for="'. parent::getId().'"'
                     : '').'>'.$this->getCaption().':'
                 . (($this->getMin() !== false)? ' *':'').'</label><br>'
                 :'')
-            . '<input '
+            . '<textarea '
             .$el_attributes
             . (($this->getDisabled() === true)? 'disabled ' : '')
-            .'  />';
+            .'>' . parent::getValue() . '</textarea>';
         }
         else
         {
