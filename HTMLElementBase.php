@@ -74,8 +74,11 @@ class HTMLElementBase
      */
     private $caption = false;
 
-    /*
+    /**
      * Флаг для включения/выключения элемента.
+     * false - элемент включен.
+     * true - элемент выключен.
+     * @var bool
      */
     private $disabled = false;
 
@@ -189,6 +192,15 @@ class HTMLElementBase
     }
 
     /**
+     * Возвращает конфигурацию элемента.
+     * @return array
+     */
+    public function getFullConfig()
+    {
+        return $this->element_config;
+    }
+
+    /**
      * Устанавливает имя элемента.
      * @param $value string - значение
      */
@@ -222,6 +234,29 @@ class HTMLElementBase
     public function getId()
     {
         return $this->getConfig(self::HTML_E_CONFIG_ID_NAME);
+    }
+
+    /**
+     * Устанавилвает значение для видимости элемента.
+     * @param $value bool - true - не показывать / false - показывать
+     * @return bool
+     */
+    public function setDisabled($value)
+    {
+        if (!is_bool($value))
+        {
+            return false;
+        }
+        $this->disabled = $value;
+    }
+
+    /**
+     * Возвращает значение видимости.
+     * @return bool
+     */
+    public function getDisabled()
+    {
+        return $this->disabled;
     }
 
     /**
