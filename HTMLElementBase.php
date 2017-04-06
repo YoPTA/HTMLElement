@@ -26,44 +26,13 @@ class HTMLElementBase
      ********************* Поля класса *********************
      *******************************************************/
 
-    // Возможные типы
-    const HTML_E_TYPE_TEXT_STRING = 'string'; // Строка
-    const HTML_E_TYPE_TEXT_INTEGER = 'integer'; // Целое число
-    const HTML_E_TYPE_TEXT_TEXTAREA = 'textarea'; // Текстовая область
-    const HTML_E_TYPE_TEXT_DATE = 'date'; // Дата
-    const HTML_E_TYPE_TEXT_TIME = 'time'; // Время
-
-    const HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX = 'checkbox'; // Флажки
-    const HTML_E_TYPE_CHECKBOXANDRADIO_RADIO = 'radio'; // Переключатель
-    const HTML_E_TYPE_SELECT = 'select'; // Список
-
-
     private $default_charset = 'UTF-8';
-
-    /*
-    * Типы элемента.
-    * Если тип будет использоваться, то его необходимо
-    * включить в массив с типами.
-    */
-    public $types_type = [
-        self::HTML_E_TYPE_TEXT_STRING => true,
-        self::HTML_E_TYPE_TEXT_INTEGER => true,
-        self::HTML_E_TYPE_TEXT_TEXTAREA => true,
-        self::HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX => true,
-        self::HTML_E_TYPE_CHECKBOXANDRADIO_RADIO => true,
-    ];
 
     // Установки конфигурации элемента
     const HTML_E_CONFIG_NAME_NAME = 'name';
     const HTML_E_CONFIG_STYLE_NAME = 'style';
     const HTML_E_CONFIG_ID_NAME = 'id';
     const HTML_E_CONFIG_CLASS_NAME = 'class';
-
-    /*
-     * Тип.
-     * Может принимать строковое значение, один из возможных типов.
-     */
-    private $type = '';
 
     /*
      * Для проверки элемента. Если поле меняет состояние
@@ -97,38 +66,6 @@ class HTMLElementBase
     /*******************************************************
      ******************** Методы класса ********************
      *******************************************************/
-
-    /**
-     * Конструктор класса.
-     * @param $value string - тип элемента
-     */
-    public function __construct($value)
-    {
-        $this->setType($value);
-    }
-
-    /**
-     * Устанавливает значение для типа.
-     * @param $value string - тип
-     * @return bool
-     */
-    private function setType($value)
-    {
-        if (!isset($this->types_type[$value]))
-        {
-            return false;
-        }
-        $this->type = $value;
-    }
-
-    /**
-     * Возвращает тип элемента.
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 
     /**
      * Возвращает кодировку по умолчанию.

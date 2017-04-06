@@ -12,7 +12,7 @@ include_once dirname(__FILE__).'/../HTMLCheckboxAndRadioRadioElement.php';
 
 
 
-$radio_element['one'] = new HTMLCheckboxAndRadioRadioElement(HTMLCheckboxAndRadioRadioElement::HTML_E_TYPE_CHECKBOXANDRADIO_RADIO);
+$radio_element['one'] = new HTMLCheckboxAndRadioRadioElement();
 
 $radio_element['one']->setId('123');
 $radio_element['one']->setName('radio');
@@ -21,7 +21,7 @@ $radio_element['one']->setCaption('Какое-то радио');
 //$radio_element['one']->setDisabled(true);
 //$radio_element['one']->setChecked(true);
 
-$radio_element['two'] = new HTMLCheckboxAndRadioRadioElement(HTMLCheckboxAndRadioRadioElement::HTML_E_TYPE_CHECKBOXANDRADIO_RADIO);
+$radio_element['two'] = new HTMLCheckboxAndRadioRadioElement();
 
 $radio_element['two']->setId('124');
 $radio_element['two']->setName('radio');
@@ -54,7 +54,7 @@ if (isset($_POST['execute']))
 
 
 
-$checkbox_element['one'] = new HTMLCheckboxAndRadioCheckboxElement(HTMLCheckboxAndRadioCheckboxElement::HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX);
+$checkbox_element['one'] = new HTMLCheckboxAndRadioCheckboxElement();
 $checkbox_element['one']->setName('checkboxes[a]');
 $checkbox_element['one']->setValue('a-value');
 $checkbox_element['one']->setCaption('Значение a');
@@ -64,13 +64,13 @@ $checkbox_element['one']->addStyleClass('myClass2');
 (is_array($checkbox_elements) && array_key_exists('a', $checkbox_elements))? $checkbox_element['one']->setChecked(true):'';
 
 
-$checkbox_element['two'] = new HTMLCheckboxAndRadioCheckboxElement(HTMLCheckboxAndRadioCheckboxElement::HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX);
+$checkbox_element['two'] = new HTMLCheckboxAndRadioCheckboxElement();
 $checkbox_element['two']->setName('checkboxes[b]');
 $checkbox_element['two']->setValue('b-value');
 $checkbox_element['two']->setCaption('Значение b');
 (is_array($checkbox_elements) && array_key_exists('b', $checkbox_elements))? $checkbox_element['two']->setChecked(true):'';
 
-$checkbox_element['three'] = new HTMLCheckboxAndRadioCheckboxElement(HTMLCheckboxAndRadioCheckboxElement::HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX);
+$checkbox_element['three'] = new HTMLCheckboxAndRadioCheckboxElement();
 $checkbox_element['three']->setName('checkboxes[c]');
 $checkbox_element['three']->setValue('c-value');
 $checkbox_element['three']->setCaption('Значение c');

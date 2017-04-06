@@ -48,15 +48,7 @@ class HTMLTextElement extends HTMLElementBase
         {
             return false;
         }
-        if (parent::getType() === self::HTML_E_TYPE_TEXT_INTEGER)
-        {
-            $this->setValue(intval(htmlspecialchars($_REQUEST[$this->getName()], null, parent::getDefaultCharset())));
-        }
-        else
-        {
-            $this->setValue(htmlspecialchars($_REQUEST[$this->getName()], null, parent::getDefaultCharset()));
-        }
-
+        $this->setValue(htmlspecialchars($_REQUEST[$this->getName()], null, parent::getDefaultCharset()));
     }
 
     /**
@@ -65,19 +57,9 @@ class HTMLTextElement extends HTMLElementBase
      */
     public function setMin($value)
     {
-        if (parent::getType() == self::HTML_E_TYPE_TEXT_STRING)
+        if (is_int($value))
         {
-            if (is_int($value))
-            {
-                $this->min = $value;
-            }
-        }
-        if (parent::getType() == self::HTML_E_TYPE_TEXT_INTEGER)
-        {
-            if (is_int($value))
-            {
-                $this->min = $value;
-            }
+            $this->min = $value;
         }
     }
 
@@ -96,19 +78,9 @@ class HTMLTextElement extends HTMLElementBase
      */
     public function setMax($value)
     {
-        if (parent::getType() == self::HTML_E_TYPE_TEXT_STRING)
+        if (is_int($value))
         {
-            if (is_int($value))
-            {
-                $this->max = $value;
-            }
-        }
-        if (parent::getType() == self::HTML_E_TYPE_TEXT_INTEGER)
-        {
-            if (is_int($value))
-            {
-                $this->max = $value;
-            }
+            $this->max = $value;
         }
     }
 

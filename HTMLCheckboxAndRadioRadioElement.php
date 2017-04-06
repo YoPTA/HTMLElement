@@ -13,8 +13,7 @@ class HTMLCheckboxAndRadioRadioElement extends HTMLCheckboxAndRadio
     {
         $el_attributes = '';
 
-        if (parent::getType() == self::HTML_E_TYPE_CHECKBOXANDRADIO_RADIO
-            && parent::getCaption() != false)
+        if (parent::getCaption() != false)
         {
             $el_attributes .= ' type="radio"';
 
