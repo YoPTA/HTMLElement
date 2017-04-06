@@ -3,7 +3,7 @@
 namespace HTMLElement;
 
 
-class HTMLCheckboxAndRadioCheckboxElement extends HTMLCheckboxAndRadio
+class HTMLCheckboxAndRadioRadioElement extends HTMLCheckboxAndRadio
 {
     /**
      * Отрисовывает html элемент.
@@ -13,10 +13,10 @@ class HTMLCheckboxAndRadioCheckboxElement extends HTMLCheckboxAndRadio
     {
         $el_attributes = '';
 
-        if (parent::getType() == self::HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX
+        if (parent::getType() == self::HTML_E_TYPE_CHECKBOXANDRADIO_RADIO
             && parent::getCaption() != false)
         {
-            $el_attributes .= ' type="checkbox"';
+            $el_attributes .= ' type="radio"';
 
             $full_config = parent::getFullConfig();
 
@@ -36,11 +36,11 @@ class HTMLCheckboxAndRadioCheckboxElement extends HTMLCheckboxAndRadio
             }
 
             return '<label'
-                . ((parent::getId() != '' && parent::getId() != false)
+            . ((parent::getId() != '' && parent::getId() != false)
                 ? ' for="'.parent::getId().'"' : '')
-                .'><input '. $el_attributes
-                .((parent::getDisabled() === true)? ' disabled ' : '').'/>'
-                . parent::getCaption() .'</label>';
+            .'><input '. $el_attributes
+            .((parent::getDisabled() === true)? ' disabled ' : '').'/>'
+            . parent::getCaption() .'</label>';
         }
         else
         {

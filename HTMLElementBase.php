@@ -50,6 +50,7 @@ class HTMLElementBase
         self::HTML_E_TYPE_TEXT_INTEGER => true,
         self::HTML_E_TYPE_TEXT_TEXTAREA => true,
         self::HTML_E_TYPE_CHECKBOXANDRADIO_CHECKBOX => true,
+        self::HTML_E_TYPE_CHECKBOXANDRADIO_RADIO => true,
     ];
 
     // Установки конфигурации элемента
