@@ -2,6 +2,7 @@
 use HTMLElement\HTMLElementBase;
 use HTMLElement\HTMLTextElement;
 use HTMLElement\HTMLTextStringElement;
+use HTMLElement\HTMLSelectOptgroupElement;
 
 /*
  * Подключаем элементы
@@ -9,12 +10,11 @@ use HTMLElement\HTMLTextStringElement;
 include_once dirname(__FILE__).'/HTMLElementBase.php';
 include_once dirname(__FILE__).'/HTMLTextElement.php';
 include_once dirname(__FILE__).'/HTMLTextStringElement.php';
+include_once dirname(__FILE__).'/HTMLSelectOptgroupElement.php';
 
 
 
-$base_object = new HTMLTextStringElement(HTMLTextStringElement::HTML_E_TYPE_TEXT_STRING);
+$base_object = new HTMLSelectOptgroupElement();
 
-$base_object->setValue('123');
-echo $base_object->getValue();
-
-
+$base_object->setLabel('123');
+echo $base_object->getLabel();
