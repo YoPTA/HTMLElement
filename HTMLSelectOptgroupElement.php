@@ -118,7 +118,7 @@ class HTMLSelectOptgroupElement
      * Отрисовывает открывающий тег html элемента.
      * @return string
      */
-    public function renderOpenTag()
+    public function renderOpen()
     {
         $el_attributes = '';
         $full_config = $this->getFullConfig();
@@ -140,7 +140,7 @@ class HTMLSelectOptgroupElement
      * Отрисовывает закрывающий тег html элемент.
      * @return string
      */
-    public function renderCloseTag()
+    public static function renderClose()
     {
         return '</optgroup>';
     }
