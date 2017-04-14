@@ -1,29 +1,30 @@
 <?php
-use HTMLElement\HTMLElementBase;
-use HTMLElement\HTMLTextElement;
-use HTMLElement\HTMLTextDateElement;
+
+use HTMLElement\HTMLTextDateTimeDateElement;
 
 /*
  * Подключаем элементы
  */
 include_once dirname(__FILE__).'/../HTMLElementBase.php';
 include_once dirname(__FILE__).'/../HTMLTextElement.php';
-include_once dirname(__FILE__).'/../HTMLTextDateElement.php';
+include_once dirname(__FILE__).'/../HTMLTextDateTimeElement.php';
+include_once dirname(__FILE__).'/../HTMLTextDateTimeDateElement.php';
 
-$date_element = new HTMLTextDateElement();
-$date_element->setValue('29.04.2016');
-$date_element->setMin('30.03.2016');
-$date_element->setMax('30.03.2016');
-$date_element->setName('myDate');
-$date_element->setId('myDate');
-$date_element->setValueFromRequest();
-//$date_element->setDateFormat('d.m.Y');
-$date_element->check();
+
+$date = new HTMLTextDateTimeDateElement();
+$date->setFormat('d.m.Y');
+$date->setValue('30.03.2017');
+$date->setMin('01.01.2017');
+$date->setMax('31.01.2017');
+
+
+$date->check();
+
 
 
 echo '<form method="POST">';
-echo $date_element->render();
 
+echo $date->render();
 echo '<br /><br />';
 echo '<input type="submit" >';
 
