@@ -41,7 +41,7 @@ class HTMLTextIntegerElement extends HTMLTextElement
     {
         $el_attributes = '';
 
-        $el_attributes .= ' type="text"';
+        $el_attributes .= ((!parent::getConfig('type'))?' type="text"': '');
         parent::setStyle('width: 250px;');
         if (parent::getCheck() === false)
         {
